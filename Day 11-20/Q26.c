@@ -11,7 +11,7 @@ int main() {
     } else if (b >= a && b >= c) {
         printf("Largest is %d\n", b);
     } else {
-        printf("Largest is %d\n", c);
+        printf("Largest is %d\n", 
     }
     return 0;
 }
