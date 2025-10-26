@@ -1,26 +1,20 @@
-/*Q14: Write a program to input a character and check whether it is a vowel or consonant using if–else.
+/*Q24: Write a program to calculate electricity bill based on units consumed with these rates: 
+First 100 units at ₹5/unit 
+Next 100 units at ₹7/unit 
+Next 100 units at ₹10/unit 
+Above at ₹12/unit
 */
-
 #include <stdio.h>
 int main() {
-    char ch;
-    printf("Enter a character: ");
-    scanf("%c", &ch);
-
-    if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
-        if (ch >= 'A' && ch <= 'Z') {
-            ch = ch + ('a' - 'A');
-        }
-
-        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-            printf("Vowel\n");
-        } else {
-            printf("Consonant\n");
-        }
-    } else {
-        printf("Invalid input. Please enter an alphabet character.\n");
-    }
-
+    int units;
+    int bill = 0;
+    scanf("%d", &units);
+    if (units <= 100)
+        bill = units * 5;
+    else if (units <= 200)
+        bill = 100 * 5 + (units - 100) * 7;
+    else
+        bill = 100 * 5 + 100 * 7 + (units - 200) * 10;
+    printf("Bill: ₹%d\n", bill);
     return 0;
 }
-
