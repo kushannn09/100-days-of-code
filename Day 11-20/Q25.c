@@ -1,19 +1,34 @@
-/*Q15: Write a program to input a character and check whether it is an uppercase alphabet, lowercase alphabet, digit, or special character.
+/*Q25: Write a program to implement a basic calculator using switch-case for +, -, *, /, %.
 */
-
 #include <stdio.h>
 int main() {
-    char ch;
-    printf("Enter a character: ");
-    scanf("%c", &ch);
-    if (ch >= 'A' && ch <= 'Z') {
-        printf("Uppercase alphabet\n");
-    } else if (ch >= 'a' && ch <= 'z') {
-        printf("Lowercase alphabet\n");
-    } else if (ch >= '0' && ch <= '9') {
-        printf("Digit\n");
-    } else {
-        printf("Special character\n");
+    int a, b;
+    char op;
+    scanf("%d %d %c", &a, &b, &op);
+    switch(op) {
+        case '+':
+            printf("%d\n", a + b);
+            break;
+        case '-':
+            printf("%d\n", a - b);
+            break;
+        case '*':
+            printf("%d\n", a * b);
+            break;
+        case '/':
+            if (b != 0)
+                printf("%d\n", a / b);
+            else
+                printf("Error: Division by zero\n");
+            break;
+        case '%':
+            if (b != 0)
+                printf("%d\n", a % b);
+            else
+                printf("Error: Modulo by zero\n");
+            break;
+        default:
+            printf("Invalid Operator\n");
     }
     return 0;
 }
